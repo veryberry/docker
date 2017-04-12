@@ -21,6 +21,11 @@ RUN set -x; \
         && rm -rf /var/lib/apt/lists/* wkhtmltox.deb \
         && pip install psycogreen==1.0
 
+# Define Postgresql version to make pg_dump working
+ENV PG_VERSION 9.6
+RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' $PG_MAJOR > /etc/apt/sources.list.d/pgdg.list
+RUN apt-get update
+
 # Install Odoo
 ENV ODOO_VERSION 10.0
 ENV ODOO_RELEASE 20170207
