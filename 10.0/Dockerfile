@@ -33,7 +33,7 @@ RUN set -ex; \
         rm -r "$GNUPGHOME"; \
         apt-key list
 
-ENV PG_VERSION 9.6
+ENV PG_VERSION 9.5
 RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' $PG_VERSION > /etc/apt/sources.list.d/pgdg.list
 RUN apt-get update
 
